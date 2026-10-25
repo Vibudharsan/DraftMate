@@ -4,7 +4,7 @@ Responsive, buildless web-app prototype for the DraftMate AI hackathon brief.
 
 ## Download and run (Windows)
 
-1. Download **DraftMate-Windows.zip** from the [latest release](https://github.com/Vibudharsan/draftmate/releases/latest).
+1. Download **DraftMate-Windows.zip** from the [latest release](https://github.com/Vibudharsan/DraftMate/releases/latest).
 2. Extract it anywhere (right-click → Extract All).
 3. Double-click `Start-DraftMate.cmd`. DraftMate opens at http://127.0.0.1:4174.
 

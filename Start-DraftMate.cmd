@@ -4,7 +4,7 @@ set "PY=%~dp0runtime\python.exe"
 if not exist "%PY%" set "PY=%~dp0.venv\Scripts\python.exe"
 if not exist "%PY%" (
   echo DraftMate's Python was not found. Download the full Windows release zip from
-  echo   https://github.com/Vibudharsan/draftmate/releases/latest
+  echo   https://github.com/Vibudharsan/DraftMate/releases/latest
   echo and extract it before running this file.
   pause
   exit /b 1
