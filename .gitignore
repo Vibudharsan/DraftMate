@@ -1,0 +1,8 @@
+data/
+.venv/
+.venv-original-broken/
+android/build/
+android/*.keystore
+__pycache__/
+.env
+*.log

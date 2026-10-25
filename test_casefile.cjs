@@ -1,0 +1,10 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const code=fs.readFileSync('casefile.js','utf8');
+const context=vm.createContext({types:['Civil','Criminal','Commercial','Constitutional','Family','Labour','Tax','Consumer','Other']});
+vm.runInContext(code.match(/function recordType\(c\)\{[^\n]+/)[0],context);
+assert.equal(context.recordType({type:'Civil'}),'Civil');
+assert.equal(context.recordType({number:'Criminal Appeal No. 123'}),'Criminal');
+assert.equal(context.recordType({number:'C.A. No. 2317/2011'}),'Civil');
+assert.equal(context.recordType({number:'WP 99'}),'Unclassified');
+assert.ok(code.includes("save('draftmate.matterDetails',matterDetails)"));
+console.log('Passed: case classification and unclassified fallback.');

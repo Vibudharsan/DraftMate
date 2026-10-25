@@ -1,0 +1,61 @@
+/* Command bar: inline on Overview, floating dock elsewhere. */
+.command-dock{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:0 0 22px;box-shadow:0 10px 30px rgba(19,46,41,.06)}
+.command-head{display:none;align-items:center;justify-content:space-between;margin-bottom:10px}
+.command-head strong{font-size:13px}
+.command-head button{border:0;background:none;color:var(--muted);font-size:18px;line-height:1;padding:2px 6px}
+.command-form{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:6px 6px 6px 14px;background:var(--bg)}
+.command-form:focus-within{border-color:var(--green)}
+.command-form .command-glyph{color:var(--muted);font-size:17px}
+.command-form input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);padding:9px 2px;outline:none;font-size:15px}
+.command-form .button{margin:0;white-space:nowrap}
+.command-mic{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:9px;min-width:38px;height:38px;padding:0 9px;flex:none;white-space:nowrap;font-size:13px}
+.command-note{margin:8px 2px 0;font-size:12px;color:var(--muted)}
+.command-results:empty,.command-thread:empty{display:none}
+.command-results{margin-top:12px;display:grid;gap:4px;max-height:320px;overflow:auto}
+.command-result{display:flex;gap:10px;align-items:baseline;text-align:left;border:0;background:none;color:var(--ink);padding:8px 10px;border-radius:9px;width:100%}
+.command-result:hover,.command-result:focus-visible{background:var(--bg)}
+.command-result .command-kind{flex:none;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:78px}
+.command-result small{display:block;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:560px}
+.command-thread{margin-top:14px;display:grid;gap:10px;max-height:46vh;overflow:auto}
+.command-turn{padding:10px 12px;border-radius:12px;line-height:1.55;overflow-wrap:anywhere}
+.command-turn.user{background:var(--bg);justify-self:end;max-width:85%}
+.command-turn.bot{border:1px solid var(--line)}
+.command-turn.bot .command-question{font-weight:600;margin-top:6px}
+.command-turn .ai-answer{white-space:pre-wrap;max-height:none}
+.command-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.command-chips .button{margin:0;padding:6px 10px;font-size:12px}
+.command-slash{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;margin-top:4px}
+.command-slash code{color:var(--green);font-weight:600}
+[data-theme=dark] .command-slash code{color:var(--lime)}
+/* Floating dock on other pages */
+.command-dock.floating{position:fixed;right:20px;bottom:20px;width:min(440px,calc(100vw - 32px));margin:0;z-index:40;box-shadow:0 18px 50px rgba(0,0,0,.18);display:none}
+.command-dock.floating.open{display:block}
+.command-dock.floating .command-head{display:flex}
+.command-dock.floating .command-thread{max-height:38vh}
+.command-dock.floating .command-results{max-height:220px}
+.command-pill{position:fixed;right:20px;bottom:20px;z-index:39;border:0;border-radius:999px;background:var(--green);color:#fff;padding:11px 16px;box-shadow:0 10px 26px rgba(0,0,0,.18);display:none}
+.command-pill.show{display:block}
+/* Header buttons (floating and full-screen modes) */
+.command-head-actions{display:flex;gap:4px}
+.command-head-actions button{border:0;background:none;color:var(--muted);font-size:18px;line-height:1;padding:2px 6px}
+.command-head-actions button:hover{color:var(--ink)}
+.command-dock.floating .command-form-expand{display:none}
+/* Full-screen chat mode */
+body.command-full-open{overflow:hidden}
+.command-dock.full{position:fixed;inset:0;z-index:80;margin:0;border:0;border-radius:0;box-shadow:none;background:var(--bg);display:flex;flex-direction:column;padding:18px max(16px,calc((100vw - 860px)/2)) 16px}
+.command-dock.full .command-head{display:flex;order:0;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:0}
+.command-dock.full .command-head strong{font-family:Georgia,serif;font-size:20px}
+.command-dock.full .command-form-expand{display:none}
+.command-dock.full .command-thread{order:1;flex:1;max-height:none;margin:0;padding:20px 2px;display:flex;flex-direction:column;gap:12px}
+.command-dock.full .command-thread:empty{display:flex}
+.command-dock.full .command-thread:empty::before{content:'Ask a question about your documents, give a command like “add a hearing for the Mehra case on Friday at 11am”, or type / for commands.';margin:auto;max-width:440px;text-align:center;color:var(--muted);line-height:1.7}
+.command-dock.full .command-turn{font-size:15px;max-width:88%}
+.command-dock.full .command-turn.bot{align-self:flex-start;background:var(--white)}
+.command-dock.full .command-turn.user{align-self:flex-end}
+.command-dock.full .command-results{order:2;max-height:34vh;margin:0 0 10px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:6px}
+.command-dock.full .command-results:empty{display:none}
+.command-dock.full .command-form{order:3;background:var(--white);padding:8px 8px 8px 16px}
+.command-dock.full .command-form input{font-size:16px;padding:12px 2px}
+.command-dock.full .command-note{order:4;text-align:center}
+@media (max-width:640px){.command-dock.full{padding:12px 16px}.command-dock.full .command-turn{max-width:94%}}
+@media (max-width:640px){.command-dock{padding:12px}.command-dock.floating{right:16px;bottom:16px}.command-form{padding-left:10px}.command-form .command-glyph{display:none}.command-result .command-kind{width:62px}.command-pill{right:16px;bottom:16px}}

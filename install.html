@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132e29"><title>Install DraftMate</title><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{--green:#183d32;--ink:#202c29;--muted:#6f7c76;--line:#e4e9e2;--bg:#f7f8f5;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#e4ece6;--muted:#a2b4a9;--line:#35483f;--bg:#111b19;--card:#1b2824}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif;padding:24px 16px}
+main{max-width:560px;margin:0 auto}
+.logo{width:56px;height:56px;border-radius:14px}
+h1{font-family:Georgia,serif;font-size:28px;margin:14px 0 6px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:16px}
+h2{font-size:17px;margin:0 0 8px}
+ol{margin:0;padding-left:22px}li{margin:6px 0}
+p,small{color:var(--muted)}
+a.button{display:inline-block;background:var(--green);color:#fff;text-decoration:none;border-radius:10px;padding:11px 16px;font-weight:600;margin-top:6px}
+code{background:var(--line);padding:1px 5px;border-radius:4px}
+</style></head>
+<body><main>
+<img class="logo" src="icon-192.png" alt="">
+<h1>Install DraftMate on your phone</h1>
+<p>The phone must be on the same Wi-Fi, and DraftMate must be running on the computer.</p>
+
+<section><h2>Android · one tap</h2>
+<a class="button" href="/DraftMate.apk">Download the DraftMate app</a>
+<ol><li>Open the downloaded <code>DraftMate.apk</code>.</li><li>If Android asks, allow your browser to <b>install unknown apps</b>, then tap <b>Install</b>.</li></ol>
+<small>No certificate setup is needed: the app already trusts this computer. If Play Protect warns about an unrecognised developer, choose <b>Install anyway</b>; the app was built on this computer.</small>
+</section>
+
+<h2 style="margin-top:28px;font-size:18px">iPhone, or without the app</h2>
+<section><h2>Step 1 · Trust the certificate</h2>
+<a class="button" href="/draftmate-ca.crt">Download certificate</a>
+<p><b>Android:</b></p>
+<ol><li>Open <b>Settings › Security &amp; privacy › More security settings › Encryption &amp; credentials</b> (names vary by phone; search Settings for "certificate").</li><li>Tap <b>Install a certificate › CA certificate</b>, confirm, and pick <code>DraftMate-local-CA.crt</code> from Downloads.</li></ol>
+<p><b>iPhone:</b></p>
+<ol><li>Open the downloaded file in Safari and allow the profile download.</li><li><b>Settings › General › VPN &amp; Device Management</b> › DraftMate profile › <b>Install</b>.</li><li><b>Settings › General › About › Certificate Trust Settings</b> › turn on <b>DraftMate local network CA</b>.</li></ol>
+<small>This certificate can only vouch for local network addresses (192.168.x.x, 10.x.x.x, 172.16–31.x.x) and localhost, never for public websites. Remove it any time from the same settings.</small>
+</section>
+
+<section><h2>Step 2 · Add to home screen</h2>
+<p>Close and reopen this page (the address bar should now show a normal lock), then:</p>
+<ol><li><b>Android (Chrome):</b> menu ⋮ › <b>Install app</b> (or <b>Add to Home screen › Install</b>).</li><li><b>iPhone (Safari):</b> Share › <b>Add to Home Screen</b>.</li></ol>
+<p>DraftMate now opens from its own icon, full screen, without the browser.</p>
+<a class="button" href="/#overview">Open DraftMate</a>
+</section>
+</main></body></html>

@@ -1,0 +1,5 @@
+DraftMate library demonstration
+
+This is a non-confidential sample note for checking persistent document storage.
+It can be kept independently or linked to a case.
+It contains no legal advice, private case facts or real-person information.
