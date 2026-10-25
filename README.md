@@ -1,10 +1,22 @@
 # DraftMate AI – Legal Drafting Studio
 
-Responsive, buildless web-app prototype for the DraftMate AI hackathon brief. All project files live in `D:\Kode Kurrent\legal-studio`.
+Responsive, buildless web-app prototype for the DraftMate AI hackathon brief.
 
-## Run
+## Download and run (Windows)
 
-Double-click `Start-DraftMate.cmd` on this machine. Alternatively, from this folder run `python server.py`, then visit http://127.0.0.1:4174. No package installation is required. The page uses optional Google Fonts with local font fallbacks. The local address is accessible on this computer only; phone access requires deployment or a separately configured LAN preview.
+1. Download **DraftMate-Windows.zip** from the [latest release](https://github.com/Vibudharsan/draftmate/releases/latest).
+2. Extract it anywhere (right-click → Extract All).
+3. Double-click `Start-DraftMate.cmd`. DraftMate opens at http://127.0.0.1:4174.
+
+The release zip contains everything: the app, a portable Python with all packages, the legal reference database, the vector index and the local embedding model. Nothing else needs installing. Keep the black window open while using the app.
+
+To share with phones on the same Wi-Fi, use `Start-DraftMate-WiFi.cmd` instead and open the "Same Wi-Fi devices" address it prints.
+
+**AI features need your own API key.** Open the app's AI settings on the computer running DraftMate and enter a Gemini or Groq key, or set the `GEMINI_API_KEY` / `GROQ_API_KEY` environment variables before starting. Drafting, the library, legal search, news and case records work without a key.
+
+### Running from source
+
+Cloning this repo gives you the code only: the legal database, models and Python packages are in the release zip, not in git. With Python 3.14, create `.venv` in this folder, run `.venv\Scripts\pip install -r requirements-lock.txt`, then `Start-DraftMate.cmd`. Legal search stays empty until you copy in the release's `data` folder or rebuild it with `import_legal_data.py`.
 
 ## Working now
 
